@@ -17,8 +17,8 @@ const webpackConfigProd = {
 		filename: 'js/[name].[hash].js',
 		publicPath: '../'
 	},
-
-	devtool: 'cheap-module-eval-source-map',
+	
+	// devtool: 'cheap-module-eval-source-map',	// 就是这行代码导致注释无法去除
 
 	optimization: {
 		minimizer: [
