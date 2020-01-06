@@ -2,9 +2,9 @@ const extractTextPlugin = require("extract-text-webpack-plugin");
 const rules = [{
         test: /\.(css|scss|sass)$/,
         // 区别开发环境和生成环境
-        use: process.env.NODE_ENV === "development" ? ["style-loader", "css-loader", "sass-loader", "postcss-loader"] : extractTextPlugin.extract({
+    use: process.env.NODE_ENV === "development" ? ["style-loader", "css-loader", "postcss-loader", "sass-loader"] : extractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", "sass-loader", "postcss-loader"],
+        use: ["css-loader", "postcss-loader", "sass-loader"],
             // css中的基础路径
             publicPath: "../"
         })
