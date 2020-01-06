@@ -14,7 +14,7 @@ const webpackConfigProd = {
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		// 打包多出口文件
-		filename: 'js/[name].[hash].js',
+		filename: 'js/[name].[chunkhash].js',
 		publicPath: '../'
 	},
 	
@@ -60,7 +60,7 @@ const webpackConfigProd = {
 		}),
 		// 分离css插件参数为提取出去的路径
 		new extractTextPlugin({
-			filename: 'css/[name].[hash:8].min.css',
+			filename: 'css/[name].[md5:contenthash:hex:8].min.css',
 		}),
 	]
 
